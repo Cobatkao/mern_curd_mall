@@ -24,7 +24,7 @@ const Product = ({ info }) => {
         </Card.Text>
         <Card.Text as="div">
           <div className="my-3">
-            <Rating value={ info.rating } text={ `${info.numReviews}条评论` } />
+            <Rating value={ info.rating } text={ `${info.numReviews}评论` } />
           </div>
         </Card.Text>
         <Card.Text as="div" as="h4">

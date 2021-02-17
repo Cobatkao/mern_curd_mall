@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Badge, Row, Col } from 'react-bootstrap';
 import ProductItem from '../components/ProductItem';
-import products from '../products';
+import axios from 'axios';
 
 const Main = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get('/api/products');
+      setProducts(data);
+    }
+    fetchProducts();
+  }, [])
+
   return (
     <main>
       <h1><Badge variant="primary">New</Badge> 产品列表</h1>
